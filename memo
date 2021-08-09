@@ -9,13 +9,7 @@ https://npnl.hatenablog.jp/entry/2012/05/03/141341
 protected MessageSource messageSource;
 https://arakan-pgm-ai.hatenablog.com/entry/2017/03/16/000338
 
-■SpringValidation
-https://www.baeldung.com/spring-validation-message-interpolation
-https://terasolunaorg.github.io/guideline/1.0.x/ja/ArchitectureInDetail/Validation.html#validationmessages-properties
-
-■DefaultValidationProperties？
-javax.validation.constraints.NotNull.message
-
+***
 ■メッセージProperty読み込みClass
 org.springframework.context.support.ResourceBundleMessageSource
 
@@ -45,7 +39,15 @@ public class DataSource {
 }
 とすると、usernameにはhoge、passwordにはhogehogeを入れてくれます。
 
+***
+■SpringValidation
+https://www.baeldung.com/spring-validation-message-interpolation
+https://terasolunaorg.github.io/guideline/1.0.x/ja/ArchitectureInDetail/Validation.html#validationmessages-properties
 
+■DefaultValidationProperties？
+javax.validation.constraints.NotNull.message
+
+***
 ■SpringSessionの前Sessionから特定ユーザネームを取得
 FindByIndexNameSessionRepository　→　（RedisVer？）RedisIndexedSessionRepository
 https://zenn.dev/daisuzz/scraps/a1d95e1a6e1cab
@@ -58,6 +60,12 @@ https://qiita.com/rubytomato@github/items/8eee9e3fa86c89dd305c#websecurity
 ■antMatchers,mvcMatchers
 https://www.fixes.pub/program/265262.html
 
+***
+■tymeleaf
+implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+th:action=""
+
+***
 ■CustomCookieサンプル
 https://spring.pleiades.io/spring-session/docs/current/reference/html5/guides/java-custom-cookie.html#custom-cookie-sample
 
@@ -74,9 +82,10 @@ private CookieSerializer cookieSerializer() {
 https://ema-hiro.hatenablog.com/entry/2018/01/24/022902
 
 
-■tymeleaf
-implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
-th:action=""
+***
+■CookieのPath属性について
 
 
-■
+***
+■AWS Cognitoサンプル
+https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/javav2/example_code/cognito

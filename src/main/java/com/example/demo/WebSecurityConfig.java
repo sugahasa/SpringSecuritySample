@@ -1,7 +1,5 @@
 package com.example.demo;
 
-import com.example.demo.auth.SimpleUserDetailsService;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -16,6 +14,10 @@ import org.springframework.security.web.DefaultRedirectStrategy;
 import org.springframework.security.web.RedirectStrategy;
 import org.springframework.security.web.authentication.logout.LogoutSuccessHandler;
 import org.springframework.security.web.csrf.CookieCsrfTokenRepository;
+
+import com.example.demo.auth.SimpleUserDetailsService;
+
+import lombok.extern.slf4j.Slf4j;
 
 @EnableWebSecurity
 @Slf4j
@@ -89,7 +91,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     http
       // ### ExpressionUrlAuthorizationConfigurer
       .authorizeRequests()
-        .mvcMatchers("/", "/signup", "/menu").permitAll()
+        .antMatchers("/", "/signup", "/menu", "/test/one", "/test/two", "/test/three", "/test/four").permitAll()
         .mvcMatchers("/error/**").permitAll()
         .mvcMatchers("/memo/**").hasAnyRole("USER", "ADMIN")
         .mvcMatchers("/account/**").fullyAuthenticated()
