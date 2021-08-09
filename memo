@@ -1,0 +1,82 @@
+■messageプロパティのキー
+spring.messages.basename: i18n/messages
+
+■messageのenum★
+https://npnl.hatenablog.jp/entry/2012/05/03/141341
+
+■SpringBootのmessages.propertiesの読み込み方法★
+@Autowired
+protected MessageSource messageSource;
+https://arakan-pgm-ai.hatenablog.com/entry/2017/03/16/000338
+
+■SpringValidation
+https://www.baeldung.com/spring-validation-message-interpolation
+https://terasolunaorg.github.io/guideline/1.0.x/ja/ArchitectureInDetail/Validation.html#validationmessages-properties
+
+■DefaultValidationProperties？
+javax.validation.constraints.NotNull.message
+
+■メッセージProperty読み込みClass
+org.springframework.context.support.ResourceBundleMessageSource
+
+■ExceptionHandler
+https://qiita.com/shotana/items/f3627e45feb912946c7c
+
+
+■application.property
+dynamic
+
+■configureProperty
+Prefix単位で取得
+http://blog.tagbangers.co.jp/2019/07/12/how-spring-deals-with-properties
+@ConfigurationProperties
+POJOクラスを@ConfigurationPropertiesで装飾し、その属性でプロパティのprefixを指定すると、そのprefixを持ったプロパティをまるっとオブジェクトにぶっこむこともできます。
+
+例えば
+
+spring.datasource.username=hoge
+spring.datasource.password=hogehoge
+というプロパティがあったら、
+
+@ConfigurationProperties(prefix = "spring.datasource")
+public class DataSource {
+    String username;
+    String password;
+}
+とすると、usernameにはhoge、passwordにはhogehogeを入れてくれます。
+
+
+■SpringSessionの前Sessionから特定ユーザネームを取得
+FindByIndexNameSessionRepository　→　（RedisVer？）RedisIndexedSessionRepository
+https://zenn.dev/daisuzz/scraps/a1d95e1a6e1cab
+
+
+
+■SpringSecurityサンプル
+https://qiita.com/rubytomato@github/items/8eee9e3fa86c89dd305c#websecurity
+
+■antMatchers,mvcMatchers
+https://www.fixes.pub/program/265262.html
+
+■CustomCookieサンプル
+https://spring.pleiades.io/spring-session/docs/current/reference/html5/guides/java-custom-cookie.html#custom-cookie-sample
+
+■Cookie.pathの仕様について
+private CookieSerializer cookieSerializer() {
+    DefaultCookieSerializer serializer = new DefaultCookieSerializer();
+    serializer.setCookieName("CUSTOM_SESSION_KEY");
+    serializer.setDomainName("domain.com");
+    serializer.setCookiePath("/");
+    serializer.setCookieMaxAge(10); //Set the cookie max age in seconds, e.g. 10 seconds
+    return serializer;
+}
+
+https://ema-hiro.hatenablog.com/entry/2018/01/24/022902
+
+
+■tymeleaf
+implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+th:action=""
+
+
+■
